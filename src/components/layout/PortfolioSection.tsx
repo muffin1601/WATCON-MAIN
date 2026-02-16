@@ -1,7 +1,6 @@
+
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
 import Link from "next/link"
 import styles from "./styles/PortfolioSection.module.css"
 
@@ -31,31 +30,24 @@ const projects = [
 ]
 
 export default function PortfolioSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  })
-
-  const floatY = useTransform(scrollYProgress, [0, 1], [20, -20])
-
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section className={styles.section}>
       <header className={styles.header}>
-        <span className={styles.eyebrow}>WATCON PORTFOLIO</span>
-        <h2>
+        <span className={`${styles.eyebrow} ${styles.fadeUp}`}>WATCON PORTFOLIO</span>
+
+        <h2 className={styles.fadeUpDelay1}>
           Water-Led Design
           <br />
           Crafted with Precision.
         </h2>
-        <p>
+
+        <p className={styles.fadeUpDelay2}>
           Watcon specialises in bespoke water environments — combining technical
           expertise, durable construction, and refined design to shape spaces
           that endure.
         </p>
 
-        <Link href="/portfolio" className={styles.cta}>
+        <Link href="/portfolio" className={`${styles.cta} ${styles.fadeUpDelay3}`}>
           <span className={styles.ctaBg} />
           <span className={styles.ctaContent}>
             <span className={styles.ctaDotFront} />
@@ -67,16 +59,11 @@ export default function PortfolioSection() {
 
       <div className={styles.grid}>
         {projects.map((p, i) => (
-          <motion.article
+          <article
             key={i}
             className={`${styles.card} ${p.center ? styles.center : ""}`}
-            style={{ y: floatY }}
           >
-            <motion.div
-              className={styles.blob}
-              whileHover={{ x: 6, y: -6 }}
-              transition={{ type: "spring", stiffness: 120, damping: 14 }}
-            >
+            <div className={styles.blob}>
               <svg viewBox="-80 -80 160 160" className={styles.blobSvg}>
                 <defs>
                   <clipPath id={`blob-${i}`} clipPathUnits="userSpaceOnUse">
@@ -99,13 +86,15 @@ export default function PortfolioSection() {
                   preserveAspectRatio="xMidYMid slice"
                 />
               </svg>
-            </motion.div>
+            </div>
 
-            <h3>
+            <h3 className={styles.fadeUpDelay1}>
               <Link href={p.href}>{p.title}</Link>
             </h3>
 
-            <p className={styles.excerpt}>{p.excerpt}</p>
+            <p className={`${styles.excerpt} ${styles.fadeUpDelay2}`}>
+              {p.excerpt}
+            </p>
 
             <Link href={p.href} className={styles.cta}>
               <span className={styles.ctaBg} />
@@ -115,9 +104,10 @@ export default function PortfolioSection() {
               </span>
               <span className={styles.ctaDotBack} />
             </Link>
-          </motion.article>
+          </article>
         ))}
       </div>
     </section>
   )
 }
+

@@ -6,20 +6,20 @@ export default function ServicesSection() {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <span className={styles.eyebrow}>Since 1975</span>
+  <span className={`${styles.eyebrow} ${styles.fadeUp}`}>Since 1975</span>
 
-        <h2 className={styles.title}>
-          Designing water
-          <br />
-          <span>for timeless landscapes</span>
-        </h2>
+  <h2 className={`${styles.title} ${styles.fadeUpDelay1}`}>
+    Designing water
+    <br />
+    <span>for timeless landscapes</span>
+  </h2>
 
-        <p className={styles.subtitle}>
-          Watcon creates refined water and landscape solutions — blending engineering
-          precision, design clarity, and decades of expertise to elevate outdoor
-          environments.
-        </p>
-      </div>
+  <p className={`${styles.subtitle} ${styles.fadeUpDelay2}`}>
+    Watcon creates refined water and landscape solutions — blending engineering
+    precision, design clarity, and decades of expertise to elevate outdoor
+    environments.
+  </p>
+</div>
 
       <div className={styles.cards}>
         {cards.map((card, i) => (
