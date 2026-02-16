@@ -1,17 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import styles from './styles/ServicesSection.module.css'
 
 export default function ServicesSection() {
   return (
-    <motion.section
-      className={styles.section}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <section className={styles.section}>
       <div className={styles.header}>
         <span className={styles.eyebrow}>Since 1975</span>
 
@@ -28,37 +21,12 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      <motion.div
-        className={styles.cards}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          show: {
-            transition: {
-              staggerChildren: 0.12,
-              delayChildren: 0.2,
-            },
-          },
-        }}
-      >
+      <div className={styles.cards}>
         {cards.map((card, i) => (
-          <motion.a
+          <a
             key={card.title}
             href="#"
             className={`${styles.card} ${styles[`card${i}`]}`}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              show: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.9,
-                  ease: [0.22, 1, 0.36, 1],
-                },
-              },
-            }}
           >
             <div className={styles.imageWrap}>
               <img src={card.image} alt={card.title} />
@@ -73,10 +41,10 @@ export default function ServicesSection() {
               <span className={styles.dot} />
               <span className={styles.readText}>READ MORE</span>
             </div>
-          </motion.a>
+          </a>
         ))}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   )
 }
 
