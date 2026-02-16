@@ -1,0 +1,198 @@
+.section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 10%;
+}
+
+.header {
+  max-width: 720px;
+  margin-bottom: 80px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #000;
+  margin-bottom: 22px;
+}
+
+.title span {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+  max-width: 520px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.card0 { height: 440px; }
+.card1 { height: 455px; }
+.card2 { height: 440px; }
+.card3 { height: 410px; }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  background: #000;
+  transform: translateY(0);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: calc(100% + 200px);
+  object-fit: cover;
+  transform: translateY(-80px) scale(1);
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover img {
+  transform: translateY(-120px) scale(1.02);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 1;
+  transition: opacity 0.6s ease;
+}
+
+.card:hover .overlay {
+  opacity: 0.85;
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .cardTitle {
+  transform: translateY(-6px);
+}
+
+.cardText {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.readMore {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.readText {
+  font-size: 15px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.card:hover .readText {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

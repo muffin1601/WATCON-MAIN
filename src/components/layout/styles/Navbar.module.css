@@ -1,0 +1,180 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 28px 30px;
+}
+
+.inner {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+ justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+
+
+.logoWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuCTA{
+    display:flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+}
+
+.menuItem {
+  position: relative;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  align-self: center;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.menuText {
+  position: relative;
+  z-index: 1;
+}
+
+.menuLine {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.menuItem:hover .menuLine {
+  transform: scaleX(1);
+}
+
+.cta {
+  position: relative;
+  height: 42px;
+  padding: 0 26px;
+  border-radius: 999px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  border-radius: 999px;
+  z-index: 0;
+  transition: background-color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta:hover .bg {
+  background: #000000;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.label {
+  font-size: 12px;
+  
+  color: #000000;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+}
+
+.cta:hover .label {
+  color: white;
+}
+
+.circleFront {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #000000;
+  flex-shrink: 0;
+}
+
+.circleBack {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: white;
+  transform: translate(20px, -50%);
+  opacity: 0;
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.cta:hover .content {
+  transform: translateX(-16px);
+}
+
+.cta:hover .circleBack {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 18px 30px;
+
+  background: transparent;
+  transition:
+    background 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+}
+
+.scrolled {
+  background: rgba(29, 29, 29, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+.scrolled .menuItem {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.scrolled .menuLine {
+  background: currentColor;
+} */

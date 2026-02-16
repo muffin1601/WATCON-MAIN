@@ -1,0 +1,36 @@
+:root {
+  --token-f29541d4-a784-41e4-8dc3-507539dde244: rgb(21, 17, 23);
+  font-family: var(--font-sans);
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: rgb(255, 255, 255);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}

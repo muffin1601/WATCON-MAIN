@@ -1,0 +1,165 @@
+:root {
+  --color-bg-soft: #f6f6f6;
+  --color-text-primary: #000000;
+  --color-text-secondary: #555555;
+  --color-accent: #000000;
+  --radius-soft: 12px;
+}
+
+.section {
+  position: relative;
+  padding: 8rem 7vw;
+  background: #ffffff;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-bottom: 8rem;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.copy {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.copy h2 {
+  font-size: clamp(1.2rem, 2.6vw, 2.2rem);
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+.copy span {
+  color: var(--color-accent);
+}
+
+.sideNote {
+  max-width: 360px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.stat span {
+  font-size: 3.2rem;
+  color: var(--color-accent);
+}
+
+.stat p {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  white-space: pre-line;
+  color: var(--color-text-secondary);
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  max-width: 85%;
+  margin: 6rem auto 0;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.faqImageWrap {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.faqImageWrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.faqIntro h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.faqIntro span {
+  color: var(--color-accent);
+}
+
+.faqIntro p {
+  margin-top: 1.2rem;
+  max-width: 360px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.item {
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-soft);
+  padding: 1rem 1.2rem;
+}
+
+.item button {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.item button span {
+  font-size: 1.9rem;
+  color: var(--color-accent);
+}
+
+.answer {
+  overflow: hidden;
+}
+
+.answer p {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 900px) {
+  .copy {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
